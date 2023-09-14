@@ -27,8 +27,13 @@ namespace WebAppUser.Controllers
             if (ModelState.IsValid)
             {
                 users.Add(model);
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return View(model);
+            }
+
         }
     }
 }
